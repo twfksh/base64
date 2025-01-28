@@ -114,7 +114,7 @@ fn _calc_decode_length(input: []const u8) !usize {
 }
 
 pub fn main() !void {
-    var memory_buf: [1024]u8 = undefined;
+    var memory_buf: [std.mem.page_size]u8 = undefined;
     var fba = std.heap.FixedBufferAllocator.init(&memory_buf);
     const allocator = fba.allocator();
 
