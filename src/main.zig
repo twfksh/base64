@@ -6,12 +6,8 @@ const Base64 = struct {
     _table: *const [64]u8,
 
     pub fn init() Base64 {
-        const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const lower = "abcdefghijklmnopqrstuvwxyz";
-        const numbers_symbols = "0123456789+/";
-
         return Base64{
-            ._table = upper ++ lower ++ numbers_symbols,
+            ._table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
         };
     }
 
